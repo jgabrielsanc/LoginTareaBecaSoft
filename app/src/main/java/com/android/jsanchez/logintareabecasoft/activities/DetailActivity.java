@@ -9,6 +9,9 @@ import com.android.jsanchez.logintareabecasoft.R;
 import com.android.jsanchez.logintareabecasoft.models.Person;
 import com.squareup.picasso.Picasso;
 
+/**
+ * Create by Jesus Sanchez
+ */
 public class DetailActivity extends AppCompatActivity {
 
     private ImageView imageViewPhoto;
@@ -50,7 +53,7 @@ public class DetailActivity extends AppCompatActivity {
         imageViewPhoto = findViewById(R.id.imageViewPhotoDetail);
         editTextName = findViewById(R.id.editTextName);
         editTextCareer = findViewById(R.id.editTextCareer);
-        editTextGenre = findViewById(R.id.editTextGenrer);
+        editTextGenre = findViewById(R.id.editTextGenre);
         editTextAddress = findViewById(R.id.editTextAddress);
         editTextBirthday = findViewById(R.id.editTextBirthday);
 

@@ -18,6 +18,9 @@ import com.android.jsanchez.logintareabecasoft.utils.Util;
 
 import java.util.List;
 
+/**
+ *  Create by Jesus Sanchez
+ */
 public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences prefs;
