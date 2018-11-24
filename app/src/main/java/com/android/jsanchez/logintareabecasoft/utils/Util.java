@@ -2,6 +2,7 @@ package com.android.jsanchez.logintareabecasoft.utils;
 
 import android.content.SharedPreferences;
 
+import com.android.jsanchez.logintareabecasoft.R;
 import com.android.jsanchez.logintareabecasoft.models.Person;
 
 import java.util.ArrayList;
@@ -21,18 +22,15 @@ public class Util {
 
     public static List<Person> getDummyData() {
         return new ArrayList<Person>() {{
-            add(new Person("Jesus Sanchez", "829-821-2102"));
-            add(new Person("Maria Hernandez", "809-565-1234"));
-            add(new Person("Juan Perez", "829-831-1142"));
-            add(new Person("Carlos Sencion", "809-927-5862"));
-            add(new Person("Martin Estrella", "809-821-1104"));
-            add(new Person("Junior Dotel", "809-331-3345"));
-            add(new Person("Melissa Houde", "809-151-5549"));
-            add(new Person("Emily Corvington", "809-571-4328"));
-            add(new Person("Karla Gutierrez", "809-711-6155"));
-            add(new Person("Marcos Santos", "829-721-8273"));
-            add(new Person("Michael De la Cruz", "829-631-5381"));
-
+            add(new Person("Jesus Sanchez", "829-821-2102", R.drawable.yo, "M", "21/05/1993", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Maria Hernandez", "809-565-1234", R.drawable.maria, "F", "03/05/1995", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Thor Perez", "829-831-1142", R.drawable.thor, "M", "02/03/1994", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Capitan Sencion", "809-927-5862", R.drawable.capitanamerica, "M", "03/02/1993", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Iron Estrella", "809-821-1104",R.drawable.ironman, "M", "04/01/1943", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Batman Dotel", "809-331-3345", R.drawable.batman, "M", "04/08/1996", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Melissa Houde", "809-151-5549", R.drawable.melissa, "F", "05/03/1998", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Emily Corvington", "809-571-4328", R.drawable.emi, "F", "06/02/2000", "Software Engineer", "C/ Tomas Jaime #82"));
+            add(new Person("Karla Gutierrez", "809-711-6155", R.drawable.karla, "F", "12/07/1999", "Software Engineer", "C/ Tomas Jaime #82"));
         }};
     }
 

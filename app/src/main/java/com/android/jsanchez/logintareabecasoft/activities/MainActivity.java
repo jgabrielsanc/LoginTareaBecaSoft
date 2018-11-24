@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle("Contacts");
+        getSupportActionBar().setTitle("Estudiantes");
 
         prefs = getSharedPreferences("Preferences", MODE_PRIVATE);
 
@@ -37,14 +39,21 @@ public class MainActivity extends AppCompatActivity {
         if (bundle != null && bundle.getString("welcome") != null) {
             String welcome = bundle.getString("welcome");
             Toast.makeText(this, welcome, Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "It is empty!", Toast.LENGTH_LONG).show();
         }
-
-
 
         listView = findViewById(R.id.listView);
         people = Util.getDummyData();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("people", people.get(i));
+                startActivity(intent);
+            }
+        });
+
         personAdapter = new PersonAdapter(this, people, R.layout.list_view_item_person);
 
         listView.setAdapter(personAdapter);
@@ -71,14 +80,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void logOut(){
+    private void logOut() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 
     }
 
-    private void removeSharedPreferences(){
+    private void removeSharedPreferences() {
         prefs.edit().clear().apply();
     }
 }
